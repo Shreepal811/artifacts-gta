@@ -35,13 +35,14 @@ jobs:
         run: |
          docker logs flask-container > container-logs.txt
 
-      - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v3 
+      - name: Upload Artifat
+        uses: echapmanFromBunnings/upload-artifact@3.0
         with:
-          retention-days: 10
-          path: |
-           - smoke-report.txt
-           - container-logs.txt
+         name: 'python-artifacts'
+         path: |
+          - smoke-report.txt
+          - container-logs.txt
+         retention-days: 10 
 
   review-jobs:
     runs-on: ubuntu-latest
