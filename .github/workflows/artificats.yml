@@ -38,10 +38,10 @@ jobs:
       - name: Upload Artifat
         uses: echapmanFromBunnings/upload-artifact@3.0
         with:
-         name: 'python-artifacts'
+         name: 'flask-ci-artifacts'
          path: |
-          - smoke-report.txt
-          - container-logs.txt
+           smoke-report.txt
+           container-logs.txt
          retention-days: 10 
 
   review-jobs:
@@ -57,7 +57,7 @@ jobs:
         - name: Review Downloaded Artifacts
           run: |
            echo "===== Smoke Test Report ====="
-           cat smoke-test-report.txt
+           cat smoke-remote-report.txt
 
            echo ""
            echo "===== Container Logs ====="
