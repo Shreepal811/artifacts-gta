@@ -40,8 +40,8 @@ jobs:
         with:
           retention-days: 10
           path: |
-           smoke-report.txt
-           container-logs.txt
+           - smoke-report.txt
+           - container-logs.txt
 
   review-jobs:
     runs-on: ubuntu-latest
